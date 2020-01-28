@@ -1,0 +1,12 @@
+<h2>Registro de un usuario</h2>
+<form [formGroup]="registerForm">
+    <label>Usuario:
+      <input type="text" formControlName="username" placeholder="username" required="true" />
+    </label>
+    <br />
+    <label>Contraseña:
+      <input type="password" formControlName="password" placeholder="name" required="true" />
+    </label>
+    <br />
+    <button type="submit" (click)="register()">Submit</button>
+</form>

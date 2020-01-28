@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-success" (click)="openCrearEvento()">Agregar evento</button>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col" style="text-align: center;">nombre</th>
+    <th scope="col" style="text-align: center;">lugar</th>
+    <th scope="col" style="text-align: center;">direccion</th>
+    <th scope="col" style="text-align: center;">acciones</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evento of eventos; index as i">
+    <td style="text-align: center;">{{ evento.nombre}}</td>
+    <td style="text-align: center;">{{ evento.lugar}}</td>
+    <td style="text-align: center;">{{ evento.direccion}}</td>
+    <td style="text-align: center;">
+      <button type="button" class="btn btn-primary" style="margin-right: 7px;" (click)="openDetalle(evento)">Detalle</button>
+      <button type="button" class="btn btn-warning" style="margin-right: 7px;" (click)="openEditEvent(evento)">Editar</button>
+      <button type="button" class="btn btn-danger" (click)="deleteEvent(evento)">Eliminar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
