@@ -12,7 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { CrearComponent } from './crear/crear.component';
 import { DetalleComponent } from './detalle/detalle.component';
-import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material";
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+  MatOptionModule,
+  MatRadioModule,
+  MatSelectModule
+} from "@angular/material";
 import { EditarComponent } from './editar/editar.component';
 
 
@@ -35,7 +42,10 @@ import { EditarComponent } from './editar/editar.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [
     Globals,

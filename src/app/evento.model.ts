@@ -7,4 +7,5 @@ export class Evento {
   direccion: string;
   fechaInicio: Date;
   fechaFin: Date;
+  presencial: boolean;
 }

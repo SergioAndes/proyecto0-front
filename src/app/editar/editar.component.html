@@ -24,6 +24,15 @@
       <input type="checkbox" formControlName="presencial" required="true" [(ngModel)]="data.evento.presencial"/>
     </label>
     <br />
+  <mat-form-field>
+  <mat-label>categoria</mat-label>
+  <mat-select [(value)]="category">
+    <mat-option *ngFor="let food of categories" [value]="food.id">
+      {{food.nombre}}
+       <input type="hidden" [value]="food.id">
+    </mat-option>
+  </mat-select>
+</mat-form-field>
   <div mat-dialog-actions style="text-align: right;">
   <button type="button" class="btn" (click)="updateEvent()" >Actualizar</button>
 </div>

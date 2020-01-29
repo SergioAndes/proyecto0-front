@@ -20,9 +20,27 @@
       <input type="date" formControlName="fechaFin" placeholder="fechaFin" required="true" />
     </label>
     <br />
-  <label>presencial:
-      <input type="checkbox" formControlName="presencial" required="true" />
-    </label>
+  <mat-form-field>
+  <mat-label>categoria</mat-label>
+  <mat-select [(value)]="category">
+    <mat-option *ngFor="let food of categories" [value]="food.id">
+      {{food.nombre}}
+       <input type="hidden" formControlName="category" [value]="food.id">
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
+  <br/>
+<label>
+ <input type="radio" value=True formControlName="presencial">
+  <span>Presencial</span>
+   </label>
+  <label>
+   <input type="radio" value=False formControlName="presencial">
+    <span>No Presencial</span>
+     </label>
+
+
     <br />
     <button type="Crear" (click)="createEvent()">Submit</button>
 </form>

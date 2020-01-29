@@ -20,7 +20,7 @@ export class EnventosComponent implements OnInit {
 
   constructor(private authService: AuthService, public globals: Globals, public dialog: MatDialog) { }
   private eventos: Array<Evento> = []
-  private categories: Array<Category> = []
+
 
 
 
@@ -72,20 +72,7 @@ export class EnventosComponent implements OnInit {
     });
 
   }
-  getCategories() {
-    this.authService.getCategories().subscribe(data => {
-      data.forEach(dataItem => {
-        let category = new Category();
-        category.id = dataItem.pk;
-        category.nombre = dataItem.fields.nombre;
-        this.categories.push(category);
-      });
 
-    },error => {
-      console.log('Error -> ', error);
-
-    });
-  }
 
   getEventos() {
     this.authService.getEventsXUser(this.globals.token).subscribe(data => {
@@ -100,6 +87,7 @@ export class EnventosComponent implements OnInit {
         evento.fechaInicio = dataItem.fields.fechaInicio;
         evento.fechaFin = dataItem.fields.fechaFin;
         evento.lugar = dataItem.fields.lugar;
+        evento.presencial = dataItem.fields.presencial;
         this.eventos.push(evento);
       });
       }, error => {

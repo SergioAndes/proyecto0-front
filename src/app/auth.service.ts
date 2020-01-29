@@ -26,20 +26,20 @@ export class AuthService {
     return this.http.post(this.URL_HOST + 'eventos/', { token: tok});
   }
 
-  createEvents(nombre, lugar, direccion, fechaInicio, fechaFin, presencial, tok): Observable<any> {
+  createEvents(nombre, lugar, direccion, fechaInicio, fechaFin, presencial,category, tok): Observable<any> {
     console.log('TOKEEEN', tok)
 
     return this.http.post(this.URL_HOST + 'creato/', { token: tok, nombre: nombre, lugar: lugar,
-      direccion: direccion,fechaInicio: fechaInicio,fechaFin: fechaFin,presencial: presencial});
+      direccion: direccion,fechaInicio: fechaInicio,fechaFin: fechaFin,presencial: presencial, category: category});
   }
 
   deleteEvent(eventId): Observable<any> {
     return this.http.post(this.URL_HOST + 'deleteEvent/', { id: eventId});
   }
 
-  updateEvent(id, nombre, lugar, direccion, fechaInicio, fechaFin, presencial): Observable<any> {
+  updateEvent(id, nombre, lugar, direccion, fechaInicio, fechaFin, category,presencial): Observable<any> {
     return this.http.post(this.URL_HOST + 'updateEvent/', { id: id, nombre: nombre, lugar: lugar,
-      direccion: direccion,fechaInicio: fechaInicio,fechaFin: fechaFin,presencial: presencial});
+      direccion: direccion,fechaInicio: fechaInicio,fechaFin: fechaFin,presencial: presencial, category: category});
   }
 
   getCategories(): Observable<any> {
