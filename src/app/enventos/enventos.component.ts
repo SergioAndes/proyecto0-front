@@ -89,7 +89,9 @@ export class EnventosComponent implements OnInit {
         evento.lugar = dataItem.fields.lugar;
         evento.presencial = dataItem.fields.presencial;
         this.eventos.push(evento);
+
       });
+      this.eventos.reverse();
       }, error => {
       console.log('Error -> ', error);
     });
