@@ -8,7 +8,7 @@ import {Globals} from "../globals";
 })
 export class AuthService {
   private headers: HttpHeaders;
-  private URL_HOST = 'http://localhost:8000/core/'
+  private URL_HOST = 'http://172.24.42.22:8000/core/'
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json, text/plain' });
@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   loginUser(name, pass): Observable<any> {
-    return this.http.post('http://localhost:8000/api-token-auth/ ', { username: name, password: pass });
+    return this.http.post('http://172.24.42.22:8000/api-token-auth/ ', { username: name, password: pass });
   }
 
   getEventsXUser(tok): Observable<any> {
