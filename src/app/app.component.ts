@@ -11,6 +11,10 @@ export class AppComponent {
   title = 'proyectoFrontend';
 
   constructor(public globals: Globals, private router: Router){}
+  
+  ngOnInit() {
+    this.router.navigate([''])
+  }
 
   logout(){
     this.globals.setToken('0.0.0');
