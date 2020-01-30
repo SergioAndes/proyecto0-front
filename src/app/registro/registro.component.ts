@@ -19,6 +19,10 @@ export class RegistroComponent implements OnInit {
       });
 
   }
+  
+  goLogin() {
+   this.router.navigate(['']); 
+  }
 
   register() {
     let user = this.registerForm.get('username').value;
