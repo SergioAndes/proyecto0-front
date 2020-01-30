@@ -28,6 +28,7 @@ export class RegistroComponent implements OnInit {
     let user = this.registerForm.get('username').value;
     let pass = this.registerForm.get('password').value;
     this.authService.registerUser(user, pass).subscribe(data => {
+      alert('Registro Exitoso, vaya a la pagina de login')
       console.log('Registro exisoso ', data);
   }, error => {
         console.log('Error registrandose-> ', error);
