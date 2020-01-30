@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/eventos']);
       }, error => {
       this.globals.setToken('0.0.0');
+      alert('Credenciales incorrectas');
       console.log('Error registrandose-> ', error);
     });
   }
